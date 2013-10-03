@@ -1,0 +1,11 @@
+1 fonctionnement d'une souris optique ->asservissement interne capteur hauteur + caméra du bas
+
+http://en.wikipedia.org/wiki/Monte_Carlo_localization
+http://en.wikipedia.org/wiki/Particle_filter
+
+
+2 utilisation de la caméra frontale + gyro/Acceléromètre ->calculer pos théorique et la comparer avec les données réelles
+
+
+
+3 Asservissement caméra interne + caméra externe
