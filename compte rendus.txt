@@ -1,0 +1,12 @@
+Réunion 1 : 07/10/2013
+Voir M.Herry pour réaliser des acquisitions d'images sur les caméras du drone;
+Les échantillons doivent être représentatifs (différentes altitudes, vitesses, lieux filmés,...)
+Les stocker sur les comptes projet à l'école 
+log : M2_8
+pass : 82eb6c
+Apporter des preuves concrètes de l'avancement de notre recherche documentaire;
+Sur clé USB, ramener les documents, préparer un .txt avec un résumé et une liste de ce qu'on a
+Trouver les caractéristiques techniques précises du drone style datasheet
+Décrire plus en détail les deux voies d'asservissement possible (interne/externe)
+Revenir avec un Gantt plus précis sur microsoft project : ajout de semaines vides pour soutenances
+intermédiaire/finale, ajout d'une tâche acquisitions
