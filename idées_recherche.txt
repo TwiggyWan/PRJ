@@ -11,5 +11,7 @@ http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=143350&url=http%3A%2F%2Fie
 http://link.springer.com/article/10.1023/A:1008195814169#page-2
 http://en.wikipedia.org/wiki/Visual_Servoing#Visual_Servoing_Methodology
 http://www.univ-orleans.fr/mapmo/jcont/Courtial.pdf
+http://www.mate.tue.nl/mate/pdfs/11494.pdf
+http://eprints.qut.edu.au/8184/1/8184.pdf
 
 3 Asservissement caméra interne + caméra externe = visual servoing
