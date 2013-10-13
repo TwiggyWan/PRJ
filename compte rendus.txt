@@ -1,16 +1,14 @@
-R�union 1 : 07/10/2013
-Voir M.Herry pour r�aliser des acquisitions d'images sur les cam�ras du drone;
-Les �chantillons doivent �tre repr�sentatifs (diff�rentes altitudes, vitesses, lieux film�s,...)
-Les stocker sur les comptes projet � l'�cole 
+Réunion 1 : 07/10/2013
+Voir M.Herry pour réaliser des acquisitions d'images sur les caméras du drone;
+Les échantillons doivent être représentatifs (différentes altitudes, vitesses, lieux filmés,...)
+Les stocker sur les comptes projet à l'école 
 log : M2_8
 pass : 82eb6c
-Apporter des preuves concr�tes de l'avancement de notre recherche documentaire;
-Sur cl� USB, ramener les documents, pr�parer un .txt avec un r�sum� et une liste de ce qu'on a
+Apporter des preuves concrètes de l'avancement de notre recherche documentaire;
+Sur clé USB, ramener les documents, préparer un .txt avec un résumé et une liste de ce qu'on a
 Trouver les caract�ristiques techniques pr�cises du drone style datasheet
-D�crire plus en d�tail les deux voies d'asservissement possible (interne/externe)
+Décrire plus en d�tail les deux voies d'asservissement possible (interne/externe)
 Revenir avec un Gantt plus pr�cis sur microsoft project : ajout de semaines vides pour soutenances
-interm�diaire/finale, ajout d'une t�che acquisitions
+intermédiaire/finale, ajout d'une tâche acquisitions
 
 
-http://eprints.qut.edu.au/8184/1/8184.pdf
-http://www.mate.tue.nl/mate/pdfs/11494.pdf

@@ -3,15 +3,31 @@
 http://en.wikipedia.org/wiki/Monte_Carlo_localization
 http://en.wikipedia.org/wiki/Particle_filter
 
+Caméra du bas donne des images de mauvaise qualité, il faudrait une phase de traitement de l'image en plus
 
-2 utilisation de la caméra frontale + gyro/Acceléromètre ->calculer pos théorique et la comparer avec les données réelles
-Visual servoing
-http://cat.inist.fr/?aModele=afficheN&cpsidt=190083
-http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=143350&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D143350
-http://link.springer.com/article/10.1023/A:1008195814169#page-2
-http://en.wikipedia.org/wiki/Visual_Servoing#Visual_Servoing_Methodology
+
+
+2 Visual servoing
+Présentation expliquant les bases de l'asservissement visuel
 http://www.univ-orleans.fr/mapmo/jcont/Courtial.pdf
+
+DYNAMICS & CONTROL TECHNOLOGY GROUP MOBILE ROBOT NAVIGATION USING VISUAL SERVOING
 http://www.mate.tue.nl/mate/pdfs/11494.pdf
+
+Visual servoing of an autonomous helicopter
 http://eprints.qut.edu.au/8184/1/8184.pdf
 
-3 Asservissement caméra interne + caméra externe = visual servoing
+Résumés sur les différentes méthodes d'asservissement visuel
+http://dfolio.free.fr/wiki/Recherche/AsservissementVisuel
+http://en.wikipedia.org/wiki/Visual_Servoing#Visual_Servoing_Methodology
+
+Visual servo control part 1 : basic approaches
+http://www.irisa.fr/lagadic/pdf/2006_ieee_ram_chaumette.pdf
+
+Visual servo control part 2 : advanced approaches
+http://www.irisa.fr/lagadic/pdf/2007_ieee_ram_chaumette.pdf
+
+Méthode marche pour caméra interne ou déportée
+Nécessité d'avoir une image de référence et de procéder par comparaisons
+Sûrement possible de tricher pour créer les images de référence avec la caméra interne du drone
+
