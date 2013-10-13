@@ -5,7 +5,11 @@ http://en.wikipedia.org/wiki/Particle_filter
 
 
 2 utilisation de la caméra frontale + gyro/Acceléromètre ->calculer pos théorique et la comparer avec les données réelles
+Visual servoing
+http://cat.inist.fr/?aModele=afficheN&cpsidt=190083
+http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=143350&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D143350
+http://link.springer.com/article/10.1023/A:1008195814169#page-2
+http://en.wikipedia.org/wiki/Visual_Servoing#Visual_Servoing_Methodology
+http://www.univ-orleans.fr/mapmo/jcont/Courtial.pdf
 
-
-
-3 Asservissement caméra interne + caméra externe
+3 Asservissement caméra interne + caméra externe = visual servoing
