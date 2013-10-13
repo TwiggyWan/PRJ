@@ -1,12 +1,16 @@
-Réunion 1 : 07/10/2013
-Voir M.Herry pour réaliser des acquisitions d'images sur les caméras du drone;
-Les échantillons doivent être représentatifs (différentes altitudes, vitesses, lieux filmés,...)
-Les stocker sur les comptes projet à l'école 
+Rï¿½union 1 : 07/10/2013
+Voir M.Herry pour rï¿½aliser des acquisitions d'images sur les camï¿½ras du drone;
+Les ï¿½chantillons doivent ï¿½tre reprï¿½sentatifs (diffï¿½rentes altitudes, vitesses, lieux filmï¿½s,...)
+Les stocker sur les comptes projet ï¿½ l'ï¿½cole 
 log : M2_8
 pass : 82eb6c
-Apporter des preuves concrètes de l'avancement de notre recherche documentaire;
-Sur clé USB, ramener les documents, préparer un .txt avec un résumé et une liste de ce qu'on a
-Trouver les caractéristiques techniques précises du drone style datasheet
-Décrire plus en détail les deux voies d'asservissement possible (interne/externe)
-Revenir avec un Gantt plus précis sur microsoft project : ajout de semaines vides pour soutenances
-intermédiaire/finale, ajout d'une tâche acquisitions
+Apporter des preuves concrï¿½tes de l'avancement de notre recherche documentaire;
+Sur clï¿½ USB, ramener les documents, prï¿½parer un .txt avec un rï¿½sumï¿½ et une liste de ce qu'on a
+Trouver les caractï¿½ristiques techniques prï¿½cises du drone style datasheet
+Dï¿½crire plus en dï¿½tail les deux voies d'asservissement possible (interne/externe)
+Revenir avec un Gantt plus prï¿½cis sur microsoft project : ajout de semaines vides pour soutenances
+intermï¿½diaire/finale, ajout d'une tï¿½che acquisitions
+
+
+http://eprints.qut.edu.au/8184/1/8184.pdf
+http://www.mate.tue.nl/mate/pdfs/11494.pdf
