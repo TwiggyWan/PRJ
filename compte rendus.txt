@@ -11,4 +11,11 @@ Décrire plus en d�tail les deux voies d'asservissement possible (interne/exte
 Revenir avec un Gantt plus pr�cis sur microsoft project : ajout de semaines vides pour soutenances
 intermédiaire/finale, ajout d'une tâche acquisitions
 
+Réunion 2 :14/10/2013
+Des documents intéressants sur l'asservissement visuel (visual servoing) ont été trouvés;
+Un document de vision industrielle nous a été remis pour apprendre les bases des techniques de traitement d'image;
+Nous devons approfondir ces deux sources d'informations pour comprendre le principe et élaborer un algorithm;
+Revoir Mr Herry pour qu'il nous précise ce qu'il attend précisément comme type d'asservissement;
+Il doit nous parler aussi des comptes projet.
+Faire un résumé des documents que nous lirons cette semaine, peut être avoir une idée d'algo?
 
