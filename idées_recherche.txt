@@ -16,6 +16,19 @@ http://www.mate.tue.nl/mate/pdfs/11494.pdf
 
 Visual servoing of an autonomous helicopter
 http://eprints.qut.edu.au/8184/1/8184.pdf
+asservissement de l'hélicoptère réalisé par une combinaison gyroscope/accéléromètre/asservissement visuel/gps
+la partie visuelle sert à trouver des fenêtres et à s'aligner avec;
+des algorithmes de détection de contour, de mise en gris des images, de filtrage sont mis en oeuvre;
+idée intéressante : les algorithmes ne sont pas appliqués sur l'image en entier mais sur une portion de celle-ci;
+la grosse partie de cet article traite de la détection de contours et du filtrage pour rendre
+les données exploitables;
+algorithme d'alignement : Lucas-Kanade;
+l'altitude est gérée par un autre capteur : les déplacements à déduire des images sont dans le plan image uniquement;
+but : minimiser l'angle (latéral donc) entre l'objectif d'alignement et l'endroit où pointe la caméra
+de l'hélicoptère.
+j'ai pas du tout compris les maths derrière cet algorithme.
+qu'est ce qu'une fenêtre gaussienne?
+
 
 Résumés sur les différentes méthodes d'asservissement visuel
 http://dfolio.free.fr/wiki/Recherche/AsservissementVisuel
@@ -23,11 +36,21 @@ http://en.wikipedia.org/wiki/Visual_Servoing#Visual_Servoing_Methodology
 
 Visual servo control part 1 : basic approaches
 http://www.irisa.fr/lagadic/pdf/2006_ieee_ram_chaumette.pdf
+Explication sur les deux types d'asservissement visuel : image based (IVBS) et position based (PVBS);
+PVBS implique d'avoir des données 3D, loi de commande et modélisation spécifiques;
+IVBS utilisable avec une ou plusieurs caméras;
+utilise une matrice d'interaction 2/6 car 6 degrés de liberté;
+en connaissant la focale de la caméra et le ratio des dimensions des pixels (?) 
+on peut convertir les données de l'image (pixels) en données métriques;
+cependant il faut impérativement connaître la profondeur, et un autre capteur doit être mis en place.
+3 lois de commande différente, l'une meilleure que les deux autres, calcul matriciel impliqué.
 
 Visual servo control part 2 : advanced approaches
 http://www.irisa.fr/lagadic/pdf/2007_ieee_ram_chaumette.pdf
 
-Méthode marche pour caméra interne ou déportée
-Nécessité d'avoir une image de référence et de procéder par comparaisons
-Sûrement possible de tricher pour créer les images de référence avec la caméra interne du drone
 
+vision based autonomous helicopter research
+http://repository.cmu.edu/cgi/viewcontent.cgi?article=1020&context=robotics
+
+visual odometry
+http://en.wikipedia.org/wiki/Visual_odometry
