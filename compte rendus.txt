@@ -19,3 +19,12 @@ Revoir Mr Herry pour qu'il nous précise ce qu'il attend précisément comme typ
 Il doit nous parler aussi des comptes projet.
 Faire un résumé des documents que nous lirons cette semaine, peut être avoir une idée d'algo?
 
+Réunion 3 : 21/10/2013
+Explication des documents que l'on avait trouvés. 
+Apport d'explications supplémentaires sur le poly. 
+Distribution du nouveau chapitre du poly en version papier.
+Explication sur les défauts de l'asservissement avec une seule caméra.
+Nouveaux axes de recherches: visual servoing mono vison camera ...
+Post réunion: réponse de Mr Herry, l'asservissement sera pour un mode stationnaire. Il pourra aussi si possible servir
+pour aller d'un point A à un point B.
+
