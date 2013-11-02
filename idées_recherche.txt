@@ -54,3 +54,6 @@ http://repository.cmu.edu/cgi/viewcontent.cgi?article=1020&context=robotics
 
 visual odometry
 http://en.wikipedia.org/wiki/Visual_odometry
+
+shape from focus/defocus
+http://sipl.kjist.ac.kr/about/SFF1.htm
