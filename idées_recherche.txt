@@ -1,14 +1,14 @@
-1 fonctionnement d'une souris optique ->asservissement interne capteur hauteur + caméra du bas
+1 fonctionnement d'une souris optique ->asservissement interne capteur hauteur + camï¿½ra du bas
 
 http://en.wikipedia.org/wiki/Monte_Carlo_localization
 http://en.wikipedia.org/wiki/Particle_filter
 
-Caméra du bas donne des images de mauvaise qualité, il faudrait une phase de traitement de l'image en plus
+Camï¿½ra du bas donne des images de mauvaise qualitï¿½, il faudrait une phase de traitement de l'image en plus
 
 
 
 2 Visual servoing
-Présentation expliquant les bases de l'asservissement visuel
+Prï¿½sentation expliquant les bases de l'asservissement visuel
 http://www.univ-orleans.fr/mapmo/jcont/Courtial.pdf
 
 DYNAMICS & CONTROL TECHNOLOGY GROUP MOBILE ROBOT NAVIGATION USING VISUAL SERVOING
@@ -16,34 +16,35 @@ http://www.mate.tue.nl/mate/pdfs/11494.pdf
 
 Visual servoing of an autonomous helicopter
 http://eprints.qut.edu.au/8184/1/8184.pdf
-asservissement de l'hélicoptère réalisé par une combinaison gyroscope/accéléromètre/asservissement visuel/gps
-la partie visuelle sert à trouver des fenêtres et à s'aligner avec;
-des algorithmes de détection de contour, de mise en gris des images, de filtrage sont mis en oeuvre;
-idée intéressante : les algorithmes ne sont pas appliqués sur l'image en entier mais sur une portion de celle-ci;
-la grosse partie de cet article traite de la détection de contours et du filtrage pour rendre
-les données exploitables;
+asservissement de l'hï¿½licoptï¿½re rï¿½alisï¿½ par une combinaison gyroscope/accï¿½lï¿½romï¿½tre/asservissement visuel/gps
+la partie visuelle sert ï¿½ trouver des fenï¿½tres et ï¿½ s'aligner avec;
+des algorithmes de dï¿½tection de contour, de mise en gris des images, de filtrage sont mis en oeuvre;
+idï¿½e intï¿½ressante : les algorithmes ne sont pas appliquï¿½s sur l'image en entier mais sur une portion de celle-ci;
+la grosse partie de cet article traite de la dï¿½tection de contours et du filtrage pour rendre
+les donnï¿½es exploitables;
 algorithme d'alignement : Lucas-Kanade;
-l'altitude est gérée par un autre capteur : les déplacements à déduire des images sont dans le plan image uniquement;
-but : minimiser l'angle (latéral donc) entre l'objectif d'alignement et l'endroit où pointe la caméra
-de l'hélicoptère.
-j'ai pas du tout compris les maths derrière cet algorithme.
-qu'est ce qu'une fenêtre gaussienne?
+l'altitude est gï¿½rï¿½e par un autre capteur : les dï¿½placements ï¿½ dï¿½duire des images sont dans le plan image uniquement;
+but : minimiser l'angle (latï¿½ral donc) entre l'objectif d'alignement et l'endroit oï¿½ pointe la camï¿½ra
+de l'hï¿½licoptï¿½re.
+j'ai pas du tout compris les maths derriï¿½re cet algorithme.
+qu'est ce qu'une fenï¿½tre gaussienne?
 
 
-Résumés sur les différentes méthodes d'asservissement visuel
+
+Rï¿½sumï¿½s sur les diffï¿½rentes mï¿½thodes d'asservissement visuel
 http://dfolio.free.fr/wiki/Recherche/AsservissementVisuel
 http://en.wikipedia.org/wiki/Visual_Servoing#Visual_Servoing_Methodology
 
 Visual servo control part 1 : basic approaches
 http://www.irisa.fr/lagadic/pdf/2006_ieee_ram_chaumette.pdf
 Explication sur les deux types d'asservissement visuel : image based (IVBS) et position based (PVBS);
-PVBS implique d'avoir des données 3D, loi de commande et modélisation spécifiques;
-IVBS utilisable avec une ou plusieurs caméras;
-utilise une matrice d'interaction 2/6 car 6 degrés de liberté;
-en connaissant la focale de la caméra et le ratio des dimensions des pixels (?) 
-on peut convertir les données de l'image (pixels) en données métriques;
-cependant il faut impérativement connaître la profondeur, et un autre capteur doit être mis en place.
-3 lois de commande différentes, l'une meilleure que les deux autres, calcul matriciel impliqué.
+PVBS implique d'avoir des donnï¿½es 3D, loi de commande et modï¿½lisation spï¿½cifiques;
+IVBS utilisable avec une ou plusieurs camï¿½ras;
+utilise une matrice d'interaction 2/6 car 6 degrï¿½s de libertï¿½;
+en connaissant la focale de la camï¿½ra et le ratio des dimensions des pixels (?) 
+on peut convertir les donnï¿½es de l'image (pixels) en donnï¿½es mï¿½triques;
+cependant il faut impï¿½rativement connaï¿½tre la profondeur, et un autre capteur doit ï¿½tre mis en place.
+3 lois de commande diffï¿½rentes, l'une meilleure que les deux autres, calcul matriciel impliquï¿½.
 
 Visual servo control part 2 : advanced approaches
 http://www.irisa.fr/lagadic/pdf/2007_ieee_ram_chaumette.pdf
@@ -59,25 +60,36 @@ http://en.wikipedia.org/wiki/Visual_odometry
 
 shape from focus/defocus
 http://sipl.kjist.ac.kr/about/SFF1.htm
-Article reprenant la théorie derrière le concept
+Article reprenant la thï¿½orie derriï¿½re le concept
 
 Shape from focus (Nayar 1994)
 http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=308479&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D308479
-Application à des images microscopiques
-Possibilité de calculer des images defocused à partir d'une image focused en utilisant une "blurring function"
-qui est faite à partir d'une fonction gaussienne à deux dimensions (???);
+Application ï¿½ des images microscopiques
+Possibilitï¿½ de calculer des images defocused ï¿½ partir d'une image focused en utilisant une "blurring function"
+qui est faite ï¿½ partir d'une fonction gaussienne ï¿½ deux dimensions (???);
 On fait une convolution entre cette fonction et l'image focused pour obtenir une image defocused (floue quoi)
-Dans le domaine fréquentiel la transformée de fourier de la blurring function agit comme un filtre passe-bas
-Obtenir des images floues avec le système optique : bouger l'objet/la caméra with respect to object plane
+Dans le domaine frï¿½quentiel la transformï¿½e de fourier de la blurring function agit comme un filtre passe-bas
+Obtenir des images floues avec le systï¿½me optique : bouger l'objet/la camï¿½ra with respect to object plane
 (=uniquement selon l'axe Z je suppose)
-Plus on éloigne l'objet de la position de focus initiale, plus le flou dans les images augmente (logique jusque là)
-Cependant, les auteurs ont développé un système de mesure du focus (mesure du flou) pour détecter le moment où 
+Plus on ï¿½loigne l'objet de la position de focus initiale, plus le flou dans les images augmente (logique jusque lï¿½)
+Cependant, les auteurs ont dï¿½veloppï¿½ un systï¿½me de mesure du focus (mesure du flou) pour dï¿½tecter le moment oï¿½ 
 l'image est la plus nette
-En pratique, des images sont réalisées à intervalles de distance réguliers et on déduit le reste du comportement
-de la netteté par interpolation; utilisation de l'opérateur Laplacien
-Problème : il faut quand même pas mal d'images dans leurs exemples pour obtenir une courbe correcte (plus de 20)
-Une fois qu'on connait la netteté d'une image et si on dispose d'une image parfaitement nette en référence, on 
-peut estimer la profondeur de l'image floue par rapport à l'image nette
+En pratique, des images sont rï¿½alisï¿½es ï¿½ intervalles de distance rï¿½guliers et on dï¿½duit le reste du comportement
+de la nettetï¿½ par interpolation; utilisation de l'opï¿½rateur Laplacien
+Problï¿½me : il faut quand mï¿½me pas mal d'images dans leurs exemples pour obtenir une courbe correcte (plus de 20)
+Une fois qu'on connait la nettetï¿½ d'une image et si on dispose d'une image parfaitement nette en rï¿½fï¿½rence, on 
+peut estimer la profondeur de l'image floue par rapport ï¿½ l'image nette
+
+
+Shape form Focus (Nayar 1992)
+
+
+Utilise diffÃ©rents niveaux de focus pour obtenir plusieurs images. 
+Cette mÃ©thode se restreint aux surface avec plusieurs images issues d'une grande variation du focus.
+Plusieurs opÃ©rations permettent de rÃ©cupÃ©rer des informations comme la profondeur de l'image.
+il faut une bonne rÃ©solution pour pouvoir utiliser cette mÃ©thode (ici un microscope)
+GrÃ¢ce Ã  un opÃ©rateur (SML), le degrÃ© de focus entre les images est calculÃ©.
+La profondeur des objet est alors calculÃ©e par rapport aux images faites avec les diffÃ©rents focus.
 
 
 
