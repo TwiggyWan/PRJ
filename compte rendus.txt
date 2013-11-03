@@ -1,4 +1,4 @@
-Réunion 1 : 07/10/2013
+﻿Réunion 1 : 07/10/2013
 Voir M.Herry pour réaliser des acquisitions d'images sur les caméras du drone;
 Les échantillons doivent être représentatifs (différentes altitudes, vitesses, lieux filmés,...)
 Les stocker sur les comptes projet à l'école 
@@ -29,4 +29,4 @@ Post réunion: réponse de Mr Herry, l'asservissement sera pour un mode stationn
 pour aller d'un point A à un point B.
 
 test
-
+blah
