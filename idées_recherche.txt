@@ -43,7 +43,7 @@ utilise une matrice d'interaction 2/6 car 6 degrés de liberté;
 en connaissant la focale de la caméra et le ratio des dimensions des pixels (?) 
 on peut convertir les données de l'image (pixels) en données métriques;
 cependant il faut impérativement connaître la profondeur, et un autre capteur doit être mis en place.
-3 lois de commande différente, l'une meilleure que les deux autres, calcul matriciel impliqué.
+3 lois de commande différentes, l'une meilleure que les deux autres, calcul matriciel impliqué.
 
 Visual servo control part 2 : advanced approaches
 http://www.irisa.fr/lagadic/pdf/2007_ieee_ram_chaumette.pdf
@@ -52,8 +52,34 @@ http://www.irisa.fr/lagadic/pdf/2007_ieee_ram_chaumette.pdf
 vision based autonomous helicopter research
 http://repository.cmu.edu/cgi/viewcontent.cgi?article=1020&context=robotics
 
+
 visual odometry
 http://en.wikipedia.org/wiki/Visual_odometry
 
+
 shape from focus/defocus
 http://sipl.kjist.ac.kr/about/SFF1.htm
+Article reprenant la théorie derrière le concept
+
+Shape from focus (Nayar 1994)
+http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=308479&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D308479
+Application à des images microscopiques
+Possibilité de calculer des images defocused à partir d'une image focused en utilisant une "blurring function"
+qui est faite à partir d'une fonction gaussienne à deux dimensions (???);
+On fait une convolution entre cette fonction et l'image focused pour obtenir une image defocused (floue quoi)
+Dans le domaine fréquentiel la transformée de fourier de la blurring function agit comme un filtre passe-bas
+Obtenir des images floues avec le système optique : bouger l'objet/la caméra with respect to object plane
+(=uniquement selon l'axe Z je suppose)
+Plus on éloigne l'objet de la position de focus initiale, plus le flou dans les images augmente (logique jusque là)
+Cependant, les auteurs ont développé un système de mesure du focus (mesure du flou) pour détecter le moment où 
+l'image est la plus nette
+En pratique, des images sont réalisées à intervalles de distance réguliers et on déduit le reste du comportement
+de la netteté par interpolation; utilisation de l'opérateur Laplacien
+Problème : il faut quand même pas mal d'images dans leurs exemples pour obtenir une courbe correcte (plus de 20)
+Une fois qu'on connait la netteté d'une image et si on dispose d'une image parfaitement nette en référence, on 
+peut estimer la profondeur de l'image floue par rapport à l'image nette
+
+
+
+shape from shading
+http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=784284&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D784284
