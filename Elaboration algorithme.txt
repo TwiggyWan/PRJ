@@ -1,0 +1,28 @@
+Ebauche pour le maintien statique du drone
+L'algorithme se divise en différentes phases :
+1- Détection de rectangles
+	On utilise la detection de formes/points d'interet pour detecter un rectangle si possible proche du 
+	centre de l'image. Possibilite de detecter un rectangle en perspective (pas de face)
+	
+2- Estimation d'une "profondeur relative"
+	On calcule des vecteurs entre les differents points d'interet ou entre les pts et les coins de l'image
+	
+3- Maintenir le rectangle à sa position de reference
+	a- Verifier les angles entre les pts 
+		Si angles pas bons, faire en sorte que le drone tourne dans un sens puis dans l'autre
+		autour du rectangle et fasse des tests sur les angles pour voir s'ils s'améliorent
+	
+	b- Verifier la profondeur
+		Comparer les vecteurs calculés en 2- avec ceux de l'image actuelle et faire avancer/reculer le drone en 
+		consequence
+		
+	c- Recadrage du rectangle
+		Agir sur l'altitude et sur le deplacement lateral du drone.
+		note : l'altitude sera sans doute deja geree par le capteur de hauteur
+		
+4- En cas de forte perturbation
+	Si la forme est sur le point de quitter le champ de la camera, une reference intermediaire est prise
+	Le drone cherchera d'abord a se recaler sur la prise intermediaire la plus recente avant de passer a la suivante
+	et ce jusqu'a la reference originale
+	
+	

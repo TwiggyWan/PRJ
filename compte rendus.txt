@@ -28,5 +28,14 @@ Nouveaux axes de recherches: visual servoing mono vison camera ...
 Post réunion: réponse de Mr Herry, l'asservissement sera pour un mode stationnaire. Il pourra aussi si possible servir
 pour aller d'un point A à un point B.
 
+Réunion 4 : 04/11/2013
+Passage en revue des articles sur le shape from focus;
+Regarder l'API du drone et comment le faire voler avec du code;
+Chercher des articles sur l'optical flow;
+Refaire un essai de vol du drone et enregister des images du drone qui dérive;
+Etablir une ébauche d'algorithme simplifié.
+
+
+
 test
 blah

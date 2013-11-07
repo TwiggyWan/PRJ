@@ -57,6 +57,10 @@ http://repository.cmu.edu/cgi/viewcontent.cgi?article=1020&context=robotics
 visual odometry
 http://en.wikipedia.org/wiki/Visual_odometry
 
+Davide Scaramuzza's work
+https://docs.google.com/viewer?url=http%3A%2F%2Frobotics.ethz.ch%2F~scaramuzza%2FDavide_Scaramuzza_files%2Fpublications%2Fpdf%2FVisual_Odometry_Tutorial.pdf
+Commencer par là ET FOUILLER FFS
+
 
 shape from focus/defocus
 http://sipl.kjist.ac.kr/about/SFF1.htm
