@@ -57,12 +57,25 @@ http://repository.cmu.edu/cgi/viewcontent.cgi?article=1020&context=robotics
 visual odometry
 http://en.wikipedia.org/wiki/Visual_odometry
 
+shape from motion
 Davide Scaramuzza's work
 https://docs.google.com/viewer?url=http%3A%2F%2Frobotics.ethz.ch%2F~scaramuzza%2FDavide_Scaramuzza_files%2Fpublications%2Fpdf%2FVisual_Odometry_Tutorial.pdf
 Commencer par là ET FOUILLER FFS
 https://sites.google.com/site/scarabotix/publications
+http://rpg.ifi.uzh.ch/publications.html
+http://rpg.ifi.uzh.ch/research.html
+
+http://rpg.ifi.uzh.ch/docs/IROS13_Forster_air-ground.pdf référence 17
 
 
+1-Point-based Monocular Motion Estimation for Computationally-Limited Micro Aerial Vehicles
+http://rpg.ifi.uzh.ch/docs/ECMR13_Troiani.pdf
+
+Monocular Visual Odometry and Dense 3D Reconstruction for On-Road Vehicles
+http://www.merl.com/publications/docs/TR2012-080.pdf
+
+Recursive 3D motion estimation from a monocular image sequence
+http://www.ee.ucr.edu/~amitrc/chellappa_sfm.pdf
 shape from focus/defocus
 http://sipl.kjist.ac.kr/about/SFF1.htm
 Article reprenant la th�orie derri�re le concept

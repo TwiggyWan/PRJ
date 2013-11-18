@@ -25,4 +25,25 @@ L'algorithme se divise en différentes phases :
 	Le drone cherchera d'abord a se recaler sur la prise intermediaire la plus recente avant de passer a la suivante
 	et ce jusqu'a la reference originale
 	
+Relecture Visual servo control part 1 : basic approaches
+1- Définir s
+	citation : "s	consists of a set of features that are immediately available in the image data."
+	Admettons que l'on considère une image en niveau de gris (sans doute nécessaire pour la détection de formes)
+	paramètres : coordonnées image des points d'intérêt (si forme = rectangle -> 4 pts d'intérêt)
+	une fois qu'on a les points, on peut facilement en faire des vecteurs si besoin. 
+	
+2- Référence à atteindre et simplification de la matrice d'interaction
+	qu'est alpha (ratio of pixel dimensions)?
+	Interaction Matrix : 6/2 car 6 degrés de liberté (DOF)
+	3 translations -> on peut virer l'axe vertical (y) car contrôle d'altitude embarqué dans le drone
+	3 rotations -> on vire rotation sur z et sur x et on garde y (rotation "en palier")
+	--> 2 translations et une rotation qui restent
+	seulement je ne sais pas identifier quel couple correspond à quoi :(
+	Si on identifie les couples, on peut simplifier la matrice
+	Si on a pas Z, de ce que j'ai compris il faut approximer une valeur, par exemple celle de la profondeur désirée.
+	J'ai pas compris comment, mais même avec une mauvaise profondeur la méthode converge (?), à vérifier tho
+	
+	
+	
+	
 	

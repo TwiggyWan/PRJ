@@ -35,7 +35,14 @@ Chercher des articles sur l'optical flow;
 Refaire un essai de vol du drone et enregister des images du drone qui dérive;
 Etablir une ébauche d'algorithme simplifié.
 
+Réunion 5 : 14/11/2013	
+Relire en détail Visual servo control part 1 : basic approaches
+Prendre rendez-vous avec Mr Herry pour faire voler le drone
+Tester un programme réalisé avec l'API pour prendre en main les fonctions de mouvement du drone
+Rédiger un tutorial rapide sur l'API et comment s'en servir, pareil pour OpenCV
+Trouver des algorithmes existants de détection de formes et les tester sur des photos prises à l'école
+Trouver des références sur shape from motion et optical flow
+Obtenir les deadlines précises pour le rapport intermédiaire et d'éventuels autres documents
 
 
-test
-blah
+
