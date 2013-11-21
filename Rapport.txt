@@ -1,0 +1,33 @@
+Introduction
+	Contexte du projet
+		Présentation du drone
+		Présentation du problème
+		
+	Objectifs
+		Stabilisation du drone
+		Le faire aller d'un point A à un point B
+		
+I. Cahier des charges
+	Besoins précis
+	Partie traitement de l'image
+	Partie Loi de commande
+	Partie Développement
+	
+II. Etat de l'art
+
+
+III. Solution choisie
+	Choix d'un algorithme
+	Schéma synoptique de l'asservissement
+	
+	
+IV. Développement
+	Outils utilisés
+		Parrot API
+		Open CV
+		IDE/Compilateurs
+	Tests de vol du drone
+	Tests de capture de vidéos
+	Implémentation de l'algorithme
+	
+Conclusion
