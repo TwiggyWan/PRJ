@@ -1,11 +1,31 @@
 Introduction
-	Contexte du projet
-		Présentation du drone
-		Présentation du problème
+	Contexte du projet & Présentation du drone
+		La société parisienne Parrot commercialise depuis 2010 un quadricoptère grand public, l'AR.Drone.
+		Conçu pour la production à grande échelle et pour une utilisation grand public, 
+		il est contrôlable directement depuis un smartphone. Sorti en 2012, l'AR.Drone 2.0 embarque
+		deux caméras, l'une HD 720p filmant l'avant, l'autre QVGA (320x240) filmant le sol. 
+		Il est capable d'afficher en temps réel les images sur le smartphone servant de télécommande via 
+		Wi-Fi. 
+
+	Présentation du problème
+		Pour permettre un pilotage aisé, le drone est asservi à l'aide d'une IMU (Inertial Measurement Unit),
+		de la caméra QVGA et de capteurs d'altitude. Il est capable de maintenir une altitude constante,
+		une assiette horizontale et une position statique.
 		
-	Objectifs
-		Stabilisation du drone
-		Le faire aller d'un point A à un point B
+		Cependant, la méthode utilisée pour garantir une position statique présente des défauts. Elle se base sur 
+		de la reconnaissance de formes au sol à l'aide de la caméra QVGA. Seulement, il arrive que le drone ait
+		à évoluer sur un sol uni en intérieur, comme de la moquette ou un entrepot. De plus lorsque la luminosité
+		est mauvaise, la caméra QVGA est très sensible au bruit numérique et il n'est plus possible de distinguer 
+		quoi que ce soit.
+		
+	Objectifs	
+		Nous souhaitons donc remédier à ce problème en utilisant la caméra frontale commme source de données
+		pour réaliser un asservissement visuel. Le drone devra pouvoir assurer son immobilité en se repérant
+		par rapport aux divers objets du décor devant lui.
+		Par la suite, nous souhaitons également le rendre capable d'aller d'un point A à un point B en lui fournissant
+		une image de référence, validant ainsi l'asservissement réalisé pour une utilisation future au sein d'autres 
+		systèmes.
+		
 		
 I. Cahier des charges
 	Besoins
