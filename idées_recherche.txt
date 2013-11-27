@@ -76,6 +76,8 @@ http://www.merl.com/publications/docs/TR2012-080.pdf
 
 Recursive 3D motion estimation from a monocular image sequence
 http://www.ee.ucr.edu/~amitrc/chellappa_sfm.pdf
+
+
 shape from focus/defocus
 http://sipl.kjist.ac.kr/about/SFF1.htm
 Article reprenant la th�orie derri�re le concept

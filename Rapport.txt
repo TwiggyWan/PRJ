@@ -8,10 +8,25 @@ Introduction
 		Le faire aller d'un point A à un point B
 		
 I. Cahier des charges
-	Besoins précis
-	Partie traitement de l'image
-	Partie Loi de commande
-	Partie Développement
+	Besoins
+	Rendre le drone conscient de sa dérive
+	Récupérer le flux vidéo
+	Récupérer les données de l'IMU
+	Se positionner par rapport à une image de référence pour rester statique
+	Se positionner par rapport à une image de référence pour aller d'un endroit à un autre,
+	cet autre endroit doit être vu depuis la position initiale
+	Laisser fonctionner l'algorithme parrot quand il le peut et faire fonctionner
+	le notre dans le cas contraire
+	
+	
+		
+	Contraintes
+	1sec/xFPS = temps de calcul max pour chaque échantillon
+	asservissement réalisé uniquement avec les données provenant du drone
+	pas de stéréovision avec les deux caméras -> la profondeur de champ n'est pas directement accessible
+	traitement déporté à un ordinateur en liaison wifi avec le drone
+	
+	
 	
 II. Etat de l'art
 
@@ -26,8 +41,10 @@ IV. Développement
 		Parrot API
 		Open CV
 		IDE/Compilateurs
+			
 	Tests de vol du drone
 	Tests de capture de vidéos
 	Implémentation de l'algorithme
 	
 Conclusion
+	Perspectives
