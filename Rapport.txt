@@ -38,18 +38,51 @@ I. Cahier des charges
 	Laisser fonctionner l'algorithme parrot quand il le peut et faire fonctionner
 	le notre dans le cas contraire
 	
-	
-		
+		Pour réaliser notre objectif principal, nous pouvons lister un certain nombre de besoins :
+			Le drone doit avoir conscience de sa dérive;
+			Il doit pouvoir se positionner par rapport à une image de référence pour rester statique;
+			Il doit pouvoir se positionner par rapport à une image de référence 
+				pour aller d'un endroit à un autre;
+			Cet endroit en question doit être vu depuis la position de départ.
+			
+		Pour les réaliser, nous devons :
+			Récupérer le flux vidéo émis par le drone;
+			Récupérer les données de l'IMU et des capteurs d'altitude;
+			Extraire des images des données permettant au drone de se positionner (points d'intérêt);
+			Réaliser un correcteur pour asservir le drone à partir des données de l'image.
+				
 	Contraintes
 	1sec/xFPS = temps de calcul max pour chaque échantillon
 	asservissement réalisé uniquement avec les données provenant du drone
 	pas de stéréovision avec les deux caméras -> la profondeur de champ n'est pas directement accessible
 	traitement déporté à un ordinateur en liaison wifi avec le drone
 	
+		Un certain nombre de contraintes nous sont imposées :
+		La caméra fonctionnant à 30 FPS, il est nécessaire que tout le traitement d'un échantillon prenne moins
+			de 1000/30 = 33 ms;
+		L'asservissement ne devra être réalisé qu'avec les données provenant des capteurs internes;
+		Le drone n'étant pas équipé de caméras 3D ou d'un système de stéréovision, la profondeur du champ 
+			de ce qui est vu n'est pas directement accessible
+		Le traitement des données se fera sur un ordinateur en liaison Wi-Fi avec le drone
+	
 	
 	
 II. Etat de l'art
-
+		Les méthodes d'asservissement visuel décrivent des concepts dérivés de l'odométrie visuelle et
+	du flux optique.(unfinished)
+	
+		En asservissement visuel, de nombreux travaux ont déjà été menés, les concepts géométriques utilisés
+	pour les lois de commande étant bien établis. On distingue deux approches, l'une basée sur les données directement
+	accessibles depuis les images (Image Based Visual Servoing), l'autre qui repose sur des données 3D 
+	(Position Based Visual Servoing).
+	
+		Les applications en robotique de l'asservissement visuel  sont nombreuses car cette technique permet à un
+	robot de se guider par rapport au décor qui l'entoure et les données visuelles se recoupent facilement avec celles 
+	d'autres capteurs comme le GPS.
+		Dans (link eprints), des données visuelles d'intérêt sont d'abord extraites des images via de la détection
+	de contours puis recoupées avec les données d'une IMU et d'un GPS pour mettre en oeuvre la loi de commande. 
+	Les mêmes principes sont utilisés dans () et ().
+	
 
 III. Solution choisie
 	Choix d'un algorithme

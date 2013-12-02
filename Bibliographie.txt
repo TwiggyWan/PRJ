@@ -1,0 +1,62 @@
+[1]
+[http://en.wikipedia.org/wiki/Monte_Carlo_localization]
+Monte Carlo Localization, Wikipedia, 2013
+
+[2]
+http://www.univ-orleans.fr/mapmo/jcont/Courtial.pdf
+E.Courtial,Commande prédictive et asservissement visuel,
+2009
+
+[3]
+http://www.mate.tue.nl/mate/pdfs/11494.pdf
+T.Tepe,DYNAMICS & CONTROL TECHNOLOGY GROUP MOBILE ROBOT NAVIGATION 
+USING VISUAL SERVOING,2010
+
+[4]
+http://eprints.qut.edu.au/8184/1/8184.pdf
+L.Mejias et al.,Visual Servoing of an Autonomous 
+Helicopter in Urban Areas Using Feature Tracking
+
+[5]
+http://www.irisa.fr/lagadic/pdf/2006_ieee_ram_chaumette.pdf
+F.Chaumette, S.Hutchinson,
+Visual servo control part 1 : basic approaches
+IEEE Robotics & Automation Magazine,December 2006
+
+[6]
+http://www.irisa.fr/lagadic/pdf/2007_ieee_ram_chaumette.pdf
+F.Chaumette, S.Hutchinson
+Visual servo control part 2 : advanced approaches
+IEEE Robotics & Automation Magazine, March 2007
+
+[7]
+Monocular Visual Odometry in Urban Environments Using an
+Omnidirectional Camera
+JP.Tardif et al., 
+IEEE/RSJ International 
+Conference on Intelligent Robots and Systems,2008
+[8]
+http://en.wikipedia.org/wiki/Visual_odometry
+Visual odometry, Wikipedia, 2013
+
+[9]
+http://rpg.ifi.uzh.ch/docs/ECMR13_Troiani.pdf
+1-Point-based Monocular Motion Estimation for Computationally-Limited Micro Aerial Vehicles
+C.Troiani et al.,2013
+
+[10]
+http://www.merl.com/publications/docs/TR2012-080.pdf
+Monocular Visual Odometry and Dense 3D Reconstruction for On-Road Vehicles
+M.Zhu et al,MITSUBISHI ELECTRIC RESEARCH LABORATORIES,
+2012
+
+[11]
+S.K Nayar et al.,Shape from focus,
+Pattern Analysis and Machine intelligence, IEEE
+Transactions (Vol 16), 1994
+
+[12]
+http://ardrone2.parrot.com/ardrone-2/specifications/
+Parrot AR.Drone specifications, Parrot website, 
+2013
+
