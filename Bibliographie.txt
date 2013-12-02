@@ -3,9 +3,10 @@
 Monte Carlo Localization, Wikipedia, 2013
 
 [2]
-http://www.univ-orleans.fr/mapmo/jcont/Courtial.pdf
-E.Courtial,Commande prédictive et asservissement visuel,
-2009
+http://repository.cmu.edu/cgi/viewcontent.cgi?article=1020&context=robotics
+O.Amidi et al.,
+Vision based autonomous helicopter research at
+carnegie mellon robotics institute 1991-1997,1998
 
 [3]
 http://www.mate.tue.nl/mate/pdfs/11494.pdf
@@ -35,9 +36,13 @@ Omnidirectional Camera
 JP.Tardif et al., 
 IEEE/RSJ International 
 Conference on Intelligent Robots and Systems,2008
+
 [8]
-http://en.wikipedia.org/wiki/Visual_odometry
-Visual odometry, Wikipedia, 2013
+http://www.dtic.mil/dtic/tr/fulltext/u2/a460585.pdf
+M.Fischler,R.Bolles,Random sample consensus: a paradigm for model fitting with applications to 
+image analysis and automated cartography,
+Communications of the ACM, 
+Volume 24 Issue 6, June 1981 
 
 [9]
 http://rpg.ifi.uzh.ch/docs/ECMR13_Troiani.pdf
@@ -60,3 +65,13 @@ http://ardrone2.parrot.com/ardrone-2/specifications/
 Parrot AR.Drone specifications, Parrot website, 
 2013
 
+[13]
+G.N. DeSouza and A.C. Kak,
+Vision for Mobile Robot Navigation: A Survey
+IEEE TRANSACTIONS ON PATTERN ANALYSIS AND MACHINE INTELLIGENCE, 
+VOL. 24, NO. 2, FEBRUARY 2002 
+
+[14]
+http://www.nickd.nl/dl/thesis_Nick_Dijkshoorn.pdf
+N Dijkshoorn,
+Simultaneous localization and mapping with the AR. Drone

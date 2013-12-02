@@ -68,20 +68,33 @@ I. Cahier des charges
 	
 	
 II. Etat de l'art
-		Les méthodes d'asservissement visuel décrivent des concepts dérivés de l'odométrie visuelle et
-	du flux optique.(unfinished)
+
+		La vision par ordinateur est un sujet vaste et étudié depuis plusieurs décennies avec des applications aussi
+	bien en informatique qu'en robotique. Les images peuvent notamment servir à faire
+	naviguer des robots à partir des informations contenues dans les images.
+	Il existe trois façons de faire [13]:
+		Avec une carte préétablie,
+		En construisant une carte de manière incrémentale,
+		Sans carte mais avec de la reconnaissance et du traçage d'objets ou de points d'intérêt.
 	
-		En asservissement visuel, de nombreux travaux ont déjà été menés, les concepts géométriques utilisés
-	pour les lois de commande étant bien établis. On distingue deux approches, l'une basée sur les données directement
-	accessibles depuis les images (Image Based Visual Servoing), l'autre qui repose sur des données 3D 
-	(Position Based Visual Servoing).
-	
-		Les applications en robotique de l'asservissement visuel  sont nombreuses car cette technique permet à un
+		Les applications en robotique de ces techniques sont nombreuses car cette technique permet à un
 	robot de se guider par rapport au décor qui l'entoure et les données visuelles se recoupent facilement avec celles 
 	d'autres capteurs comme le GPS.
-		Dans (link eprints), des données visuelles d'intérêt sont d'abord extraites des images via de la détection
+	
+	Dans les deux premiers cas, l'asservissement est réalisé à partir de la carte dont le système dispose. Pour la dernière option, on parle
+	d'asservissement visuel.Dans ce domaine, de nombreux travaux ont déjà été menés, les concepts géométriques utilisés 
+	pour les lois de commande étant bien établis. 
+	On distingue deux approches, l'une basée sur les données directement accessibles depuis les images (Image Based Visual Servoing), 
+	l'autre qui repose sur des données 3D (Position Based Visual Servoing)[5].
+
+		Dans[4] et [2], des données visuelles d'intérêt sont d'abord extraites des images via de la détection
 	de contours puis recoupées avec les données d'une IMU et d'un GPS pour mettre en oeuvre la loi de commande. 
-	Les mêmes principes sont utilisés dans () et ().
+	
+		Dans [9], Une solution basée sur l'utilisation d'une seule caméra et d'une IMU est proposée pour déterminer le mouvement
+	d'un drone volant en un nombre minimum d'itérations grâce à un algorithme RANSAC(random sample consensus) 
+	[8] modifié, et couplé à de la détection mathématique d'aberrations.
+	
+	Pour la construction incrémentale de carte, de nombreux travaux ont également été menés [10].
 	
 
 III. Solution choisie
