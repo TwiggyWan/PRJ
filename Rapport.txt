@@ -81,8 +81,8 @@ II. Etat de l'art
 	robot de se guider par rapport au décor qui l'entoure et les données visuelles se recoupent facilement avec celles 
 	d'autres capteurs comme le GPS.
 	
-	Dans les deux premiers cas, l'asservissement est réalisé à partir de la carte dont le système dispose. Pour la dernière option, on parle
-	d'asservissement visuel.Dans ce domaine, de nombreux travaux ont déjà été menés, les concepts géométriques utilisés 
+		Dans les deux premiers cas, l'asservissement est réalisé à partir de la carte dont le système dispose. Pour la dernière option, on parle
+	d'asservissement visuel. Dans ce domaine, de nombreux travaux ont déjà été menés, les concepts géométriques utilisés 
 	pour les lois de commande étant bien établis. 
 	On distingue deux approches, l'une basée sur les données directement accessibles depuis les images (Image Based Visual Servoing), 
 	l'autre qui repose sur des données 3D (Position Based Visual Servoing)[5].
@@ -92,9 +92,25 @@ II. Etat de l'art
 	
 		Dans [9], Une solution basée sur l'utilisation d'une seule caméra et d'une IMU est proposée pour déterminer le mouvement
 	d'un drone volant en un nombre minimum d'itérations grâce à un algorithme RANSAC(random sample consensus) 
-	[8] modifié, et couplé à de la détection mathématique d'aberrations.
+	[8] modifié, et l'application du concept d'odométrie visuelle. En effet, il est possible de déterminer le
+	mouvement de la caméra (et donc du système) en examinant les images successives produites au cours du 
+	déplacement.
 	
-	Pour la construction incrémentale de carte, de nombreux travaux ont également été menés [10].
+		Pour la construction incrémentale de carte, de nombreux travaux faisant également appel à
+	l'odométrie visuelle ont également été menés [10]. Ils sont souvent couplés à une famille particulière
+	d'algorithmes, les SLAM (Simultaneous Localization and Mapping)[7]. Dans [14], un algorithme SLAM est
+	implanté dans l'AR.Drone en utilisant la caméra du bas et le capteur à ultrasons pour construire la carte 
+	tridimensionnelle.
+	
+		En odométrie visuelle, des méthodes de filtrage et de détection d'erreurs sont nécessaires afin de 
+	garantir la cohérence des données. Pour ce faire l'algorithme RANSAC peut être utilisé mais le filtre de Kalman
+	est également une alternative.
+	
+		Pour résumer, il est nécessaire d'avoir une idée de la position du drone à un instant t pour être capable
+	de l'asservir à l'aide d'une loi de commande. La difficulté réside dans l'acquisition et le traitement des données
+	qui permettent d'extraire les informations nécessaires à la loi de commande. A notre connaissance, il est obligatoire
+	de procéder avec des techniques d'estimation de pose quel que soit le nombre de caméras ou les autres capteurs impliqués.
+	
 	
 
 III. Solution choisie

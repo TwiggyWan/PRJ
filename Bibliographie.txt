@@ -75,3 +75,11 @@ VOL. 24, NO. 2, FEBRUARY 2002
 http://www.nickd.nl/dl/thesis_Nick_Dijkshoorn.pdf
 N Dijkshoorn,
 Simultaneous localization and mapping with the AR. Drone
+
+[15]
+http://en.wikipedia.org/wiki/Visual_odometry
+Visual odometry, Wikipedia, 2013
+
+[16]
+http://en.wikipedia.org/wiki/Kalman_filter
+Kalman filter, Wikipedia, 2013
