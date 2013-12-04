@@ -44,5 +44,15 @@ Trouver des algorithmes existants de détection de formes et les tester sur des 
 Trouver des références sur shape from motion et optical flow
 Obtenir les deadlines précises pour le rapport intermédiaire et d'éventuels autres documents
 
+Réunion 6 : 28/11/2013
+Travail effectué :
+Poursuite des tests avec l'API Parrot : comme la solution Parrot ne compile ni sous linux ni sous windows,
+nous avons essayé une solution en node.js qui fonctionne. Les tests sont concluants et il nous reste à 
+lier la composante js du projet avec la composante c++ nécessaire pour openCV à moins que nous trouvions
+une bibliothèque de traitement d'images en js.
+Fin des recherches documentaires : tri et compilation des dites recherches et conclusions des recherches.
+Il nous reste à choisir quelle branche nous souhaitons utiliser dans la suite du projet.
+Rédaction du rapport : introduction, cahier des charges et état de l'art;
+
 
 

@@ -83,3 +83,12 @@ Visual odometry, Wikipedia, 2013
 [16]
 http://en.wikipedia.org/wiki/Kalman_filter
 Kalman filter, Wikipedia, 2013
+
+[17]
+http://wwwnavab.in.tum.de/pub/benhimane2006icra1/benhimane2006icra1.pdf
+S.BENHIMANEet al,Homography-based 2D Visual Servoing,
+2006
+
+[18]
+http://ccwu.me/vsfm/
+Changchang Wu, Visual SFM, 2013

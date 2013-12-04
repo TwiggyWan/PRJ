@@ -100,17 +100,25 @@ II. Etat de l'art
 	l'odométrie visuelle ont également été menés [10]. Ils sont souvent couplés à une famille particulière
 	d'algorithmes, les SLAM (Simultaneous Localization and Mapping)[7]. Dans [14], un algorithme SLAM est
 	implanté dans l'AR.Drone en utilisant la caméra du bas et le capteur à ultrasons pour construire la carte 
-	tridimensionnelle.
+	tridimensionnelle. On trouve d'ailleurs des programmes de shape from motion (SFM) disponibles gratuitement
+	pour faire de la reconstruction 3D à partir d'images [18]
+	
 	
 		En odométrie visuelle, des méthodes de filtrage et de détection d'erreurs sont nécessaires afin de 
 	garantir la cohérence des données. Pour ce faire l'algorithme RANSAC peut être utilisé mais le filtre de Kalman
 	est également une alternative.
 	
+		Il existe également des travaux menés sur  l'asservissement visuel en deux dimensions uniquement. 
+	Dans [17], un tel asservissement est mis en oeuvre en utilisant uniquement les données provenant de l'image
+	actuelle et de l'image de référence, sans avoir besoin de la profondeur, pour calculer la loi de commande nécessaire.
+	Les six degrés de liberté d'un robot dans l'espace sont ainsi contrôlables.
+	
+
 		Pour résumer, il est nécessaire d'avoir une idée de la position du drone à un instant t pour être capable
 	de l'asservir à l'aide d'une loi de commande. La difficulté réside dans l'acquisition et le traitement des données
-	qui permettent d'extraire les informations nécessaires à la loi de commande. A notre connaissance, il est obligatoire
-	de procéder avec des techniques d'estimation de pose quel que soit le nombre de caméras ou les autres capteurs impliqués.
-	
+	qui permettent d'extraire les informations nécessaires à la loi de commande. Les techniques d'estimation de pose
+	pour en extraire des données 3D sont les plus répandues même s'il reste possible de faire un asservissement visuel
+	à partir de données 2D.
 	
 
 III. Solution choisie
