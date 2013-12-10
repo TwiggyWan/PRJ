@@ -122,8 +122,34 @@ II. Etat de l'art
 	
 
 III. Solution choisie
+
 	Choix d'un algorithme
+
+	Toutes les solutions préalablement évoquées possèdent leur propres avantages et inconvénients. 
+	Les contraintes de notre système excluent d'office les techniques faisant appel aux GPS ou à un système de 
+	plusieurs caméras. 
+		
+		Les techniques de reconstruction 3D et de SFM sont quant à elles utilisables par notre drone 
+		qui a un équipement similaire à celui utilisé dans [9]. Ces techniques étant basées sur de 
+		l'estimation de pose, c'est à dire l'estimation de paramètres 3D du système à partir des images, 
+		elles sont à la fois lourdes en traitement[8] et nécessitent une optimisation poussée pour contrer 
+		ce problème[9]. C'est pourquoi ces techniques sont le plus souvent mises en place au sein de projets 
+		plus longs comme des thèses. En effet les notions mathématiques mises en œuvre dépassent nos compétences 
+		actuelles et seraient un obstacle important dans un projet aussi court. Nous devons en effet nous montrer 
+		prudents sur le temps que nous prendra le développement effectif de l'application, et minimiser au maximum 
+		le temps passé à comprendre la théorie derrière le projet si nous voulons rendre un logiciel fini, optimisé 
+		et complet dans les temps.
+		
+		Ainsi, la méthode proposée en [17] offre des solutions face à nos problèmes précis. Nous pouvons nous 
+		passer de l'estimation de paramètres 3D et des données provenant de l'IMU et travailler uniquement avec 
+		les données de l'image actuelle comparées à celles d'une image de référence. Ces informations servent à 
+		calculer les consignes translationnelles et rotationnelles en passant par la matrice d'homographie du système,
+		le tout sans estimer de paramètres 3D et en étant robuste vis à vis des erreurs d'estimation des paramètres 
+		de la caméra.
+			
 	Schéma synoptique de l'asservissement
+	
+	Explication de chaque bloc
 	
 	
 IV. Développement
