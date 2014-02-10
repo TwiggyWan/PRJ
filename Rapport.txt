@@ -81,8 +81,8 @@ II. Etat de l'art
 	robot de se guider par rapport au décor qui l'entoure et les données visuelles se recoupent facilement avec celles 
 	d'autres capteurs comme le GPS.
 	
-		Dans les deux premiers cas, l'asservissement est réalisé à partir de la carte dont le système dispose. Pour la dernière option, on parle
-	d'asservissement visuel. Dans ce domaine, de nombreux travaux ont déjà été menés, les concepts géométriques utilisés 
+	Dans les deux premiers cas, l'asservissement est réalisé à partir de la carte dont le système dispose. Pour la dernière option, on parle
+	d'asservissement visuel.Dans ce domaine, de nombreux travaux ont déjà été menés, les concepts géométriques utilisés 
 	pour les lois de commande étant bien établis. 
 	On distingue deux approches, l'une basée sur les données directement accessibles depuis les images (Image Based Visual Servoing), 
 	l'autre qui repose sur des données 3D (Position Based Visual Servoing)[5].
@@ -92,65 +92,99 @@ II. Etat de l'art
 	
 		Dans [9], Une solution basée sur l'utilisation d'une seule caméra et d'une IMU est proposée pour déterminer le mouvement
 	d'un drone volant en un nombre minimum d'itérations grâce à un algorithme RANSAC(random sample consensus) 
-	[8] modifié, et l'application du concept d'odométrie visuelle. En effet, il est possible de déterminer le
-	mouvement de la caméra (et donc du système) en examinant les images successives produites au cours du 
-	déplacement.
+	[8] modifié, et couplé à de la détection mathématique d'aberrations.
 	
-		Pour la construction incrémentale de carte, de nombreux travaux faisant également appel à
-	l'odométrie visuelle ont également été menés [10]. Ils sont souvent couplés à une famille particulière
-	d'algorithmes, les SLAM (Simultaneous Localization and Mapping)[7]. Dans [14], un algorithme SLAM est
-	implanté dans l'AR.Drone en utilisant la caméra du bas et le capteur à ultrasons pour construire la carte 
-	tridimensionnelle. On trouve d'ailleurs des programmes de shape from motion (SFM) disponibles gratuitement
-	pour faire de la reconstruction 3D à partir d'images [18]
-	
-	
-		En odométrie visuelle, des méthodes de filtrage et de détection d'erreurs sont nécessaires afin de 
-	garantir la cohérence des données. Pour ce faire l'algorithme RANSAC peut être utilisé mais le filtre de Kalman
-	est également une alternative.
-	
-		Il existe également des travaux menés sur  l'asservissement visuel en deux dimensions uniquement. 
-	Dans [17], un tel asservissement est mis en oeuvre en utilisant uniquement les données provenant de l'image
-	actuelle et de l'image de référence, sans avoir besoin de la profondeur, pour calculer la loi de commande nécessaire.
-	Les six degrés de liberté d'un robot dans l'espace sont ainsi contrôlables.
-	
-
-		Pour résumer, il est nécessaire d'avoir une idée de la position du drone à un instant t pour être capable
-	de l'asservir à l'aide d'une loi de commande. La difficulté réside dans l'acquisition et le traitement des données
-	qui permettent d'extraire les informations nécessaires à la loi de commande. Les techniques d'estimation de pose
-	pour en extraire des données 3D sont les plus répandues même s'il reste possible de faire un asservissement visuel
-	à partir de données 2D.
+	Pour la construction incrémentale de carte, de nombreux travaux ont également été menés [10].
 	
 
 III. Solution choisie
-
-	Choix d'un algorithme
-
-	Toutes les solutions préalablement évoquées possèdent leur propres avantages et inconvénients. 
-	Les contraintes de notre système excluent d'office les techniques faisant appel aux GPS ou à un système de 
-	plusieurs caméras. 
-		
-		Les techniques de reconstruction 3D et de SFM sont quant à elles utilisables par notre drone 
-		qui a un équipement similaire à celui utilisé dans [9]. Ces techniques étant basées sur de 
-		l'estimation de pose, c'est à dire l'estimation de paramètres 3D du système à partir des images, 
-		elles sont à la fois lourdes en traitement[8] et nécessitent une optimisation poussée pour contrer 
-		ce problème[9]. C'est pourquoi ces techniques sont le plus souvent mises en place au sein de projets 
-		plus longs comme des thèses. En effet les notions mathématiques mises en œuvre dépassent nos compétences 
-		actuelles et seraient un obstacle important dans un projet aussi court. Nous devons en effet nous montrer 
-		prudents sur le temps que nous prendra le développement effectif de l'application, et minimiser au maximum 
-		le temps passé à comprendre la théorie derrière le projet si nous voulons rendre un logiciel fini, optimisé 
-		et complet dans les temps.
-		
-		Ainsi, la méthode proposée en [17] offre des solutions face à nos problèmes précis. Nous pouvons nous 
-		passer de l'estimation de paramètres 3D et des données provenant de l'IMU et travailler uniquement avec 
-		les données de l'image actuelle comparées à celles d'une image de référence. Ces informations servent à 
-		calculer les consignes translationnelles et rotationnelles en passant par la matrice d'homographie du système,
-		le tout sans estimer de paramètres 3D et en étant robuste vis à vis des erreurs d'estimation des paramètres 
-		de la caméra.
-			
+	(Choix d'un algorithme)
 	Schéma synoptique de l'asservissement
-	
-	Explication de chaque bloc
-	
+		Référence
+			Il s'agit de la consigne utilisée pour déterminer l'objectif à atteindre par notre système.
+			
+			Comme pour toutes les images traitées par notre système, il faut extraire des informations relatives à 
+			des formes précises afin de comparer ces données de référence aux données extraites des images montrant l'évolution
+			du drone. Cependant, la référence peut avoir deux natures distinctes.			
+			
+			Dans un premier cas, il peut s'agir d'une image donnée par l'utilisateur ou par l'application
+			qui contrôle le système d'asservissement. C'est le cas si nous voulons faire évoluer notre drone vers
+			une position spécifique. Cette position doit être visible depuis la position initiale du drone pour qu'il
+			puisse calculer son itinéraire.
+			
+			Dans un second cas, la référence est une image prise par la caméra du drone qui représente la position statique
+			dans laquelle ledit drone doit rester. Le fonctionnement du reste du système n'est pas altéré par cette distinction
+			mais il est nécessaire de pouvoir le faire fonctionner dans les deux modes si nous voulons atteindre tous nos
+			objectifs.
+
+			
+			A l'allumage du drone et après son décollage, une image de référence sera prise pour représenter le drone
+			statique en attente d'ordres.
+			
+			
+		Capteurs
+			Nous travaillons à partir des images prises en temps réel par le drone, plus précisément par sa caméra frontale;
+			pour pouvoir utiliser notre système, la première chose à faire est donc de récupérer ces images. 
+			Cette fonctionnalité est présente dans l'API en node.js sur laquelle nous travaillons. Ainsi, grâce à ces outils,récupérer 
+			les données qui nous intéressent est faisable. L'objectif est désormais de transmettre à l'intelligence de notre système 
+			écrite en C++ avec la bibliothèque OpenCV 
+			des images individuelles, ou un objet représentant le flux vidéo pour que le traitement des images puisse se faire.
+			Nous devons donc réaliser un pont entre notre code écrit
+			en deux langages, entre plusieurs fichiers. C'est la la première interface entre nos boîtes "Drone" et "Intelligence".
+			
+		Détection de points d'intérêt
+			Comme nous l'avons vu, nous pouvons récupérer du drone soit des images individuelles, soit un objet représentant le 
+			flux vidéo. Dans ce cas, il existe dans un programme openCV en tant qu'instance de cvCapture. Des méthodes telles que
+			cvCapture.query nous permettent ensuite d'accéder à une image du flux. Si nous choisissons de communiquer par
+			images individuelles, nous devrons écrire en mémoire vive l'image et transmettre au programme openCV un pointeur vers cette
+			image en argument. En effet, le tableau char* argv []de la fonction main permet l'envoi d'arguments à un programme en C/C++, à 
+			la manière d'un script bash par exemple.
+			
+			Nous disposons donc à présent d'une image. Nous allons donc lui appliquer les traitements suivants:
+				-conversion en niveaux de gris : à l'aide de la méthode cvColor(), nous créons une nouvelle image en niveaux de gris (grayscale)
+					c'est nécessaire car le reste des méthodes à utiliser nécessite ce genre d'image;
+				-floutage : à l'aide de blur(), nous appliquons un flou simple (normalized box filter) qui permet d'adoucir notre image
+					grise et de réduire l'impact du bruit sur l'image;
+				
+				-détection de points : différentes méthodes sont possibles ici : un détecteur de coins par la méthode de Harris (méthode cornerHarris()),
+					ou l'utilisation d'un algorithme SURF (Speeded Up Robust Features) sont les méthodes les plus rencontrées;
+					
+				
+				-affichage des points par dessus l'image originale : utilisation de la méthode de dessin de cercle cvCircle() pour visualiser les caractéristiques
+					obtenues;
+					
+				-
+				
+		Loi de commande
+			Dans ce bloc sont effectués les calculs qui permettent de comparer les données de l'image actuelle de la position du drone avec
+			les données de l'image de référence. Nous nous heurtons ici au choix d'une solution théorique pour notre système.
+			
+			Toutes les solutions préalablement évoquées dans l'état de l'art possèdent leurs propres avantages et inconvénients. Elles proposent
+			pour la plupart de créer des correcteurs en vitesse. Les contraintes de notre système excluent d'office les techniques faisant appel aux 
+			GPS ou à un système de plusieurs caméras. Les techniques de reconstruction 3D et de SFM sont quant à elles utilisables par notre drone qui a un 
+			équipement similaire à celui utilisé dans [9]. Ces techniques étant basées sur de l'estimation de pose, c'est à dire l'estimation de paramètres
+			3D à partir des images, elles sont à la fois lourdes en traitement[8] et nécessitent d'être optimisées[9]. C'est pourquoi ces techniques
+			sont souvent développées au sein de projets plus longs comme des thèses. En effet, les notions mathématiques mises en oeuvre dépassent nos
+			compétences actuelles et seraient un obstacle important dans un projet aussi court. Nous devons en effet nous montrer prudents sur le temps 
+			que nous prendra le développement effectif de l'application et minimiser au maximum le temps passé à comprendre la théorie derrière le projet si nous
+			voulons rendre un logiciel fini, optimisé et complet dans les temps.
+			
+			Ainsi la méthode proposée en [17] offre des solutions face à nos problèmes précis. Nous pouvons nous passer de l'estimation de paramètres
+			3D et des données provenant de l'IMU et travailler uniquement avec les données de l'image actuelle comparées à celles d'une image de référence.
+			Ces informations servent à calculer les consignes translationnelles et rotationnelles en passant par la matrice d'homographie qui lie deux plans 
+			(donc deux images) entre eux. [17]. Cette méthode est robuste vis à vis des erreurs d'estimation des paramètres de la caméraet permet de se 
+			passer de l'estimation de paramètres 3D.
+			
+		
+		Contrôle du drone
+			Ce bloc prend en entrée les paramètres des vecteurs translation et rotation nécessaires à la correction. Ici est réalisée la conversion entre
+			ces paramètres et le mouvement effectif du drone. En d'autres termes, on contrôle les actionneurs à travers l'API node.js qui se charge de
+			la commande électrique des moteurs et via une fonction écrite par nous qui convertit les paramètres d'entrée du bloc en arguments utilisables
+			par les méthodes de l'API. En effet des angles sont demandés (???vérif???). De même que lors de l'interface du bloc de capteurs, nous faisons un pont
+			entre les deux parties effectives de notre application pour faire transiter les données nécessaires.
+			
+			[détailler la fonction en question]
+			
 	
 IV. Développement
 	Outils utilisés
