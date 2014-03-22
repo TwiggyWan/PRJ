@@ -17,7 +17,7 @@
 #include "opencv2/flann/flann.hpp"
 
 
-
+//hue
 int main(int argc, char** argv) {
 
     cvNamedWindow("Result");
