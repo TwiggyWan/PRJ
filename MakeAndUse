@@ -1,5 +1,4 @@
 
-
 *********************************************************************************
 *										*
 *				Opencv install (3.0) 				*
@@ -74,3 +73,42 @@ node-gyp build
 *										*
 *********************************************************************************
 node ProjectARDrone.js 
+
+
+
+
+
+*********************************************************************************
+*										*
+*				Add new Dependencies				*
+*										*
+*********************************************************************************
+
+Go to the binding.gyp
+
+{
+   "targets" : [
+      {
+         "target_name": "ProjectARDrone",
+         "sources": [""ProjectARDrone.cpp"],
+	 "include_dirs": [Add include directory path here],
+         "libraries": [Add library name with path here]
+      }
+   ]
+}
+
+exemple: want add library opencv_core   from opencv
+library is libopencv_core.so, include is in "/usr/local/include/opencv", 
+library is in "/usr/local/lib"
+
+
+{
+   "targets" : [
+      {
+         "target_name": "ProjectARDrone",
+         "sources": [""ProjectARDrone.cpp"],
+	 "include_dirs": ["/usr/local/include/opencv"],
+         "libraries": ["/usr/local/lib/libopencv_core.so"]
+      }
+   ]
+}
