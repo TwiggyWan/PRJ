@@ -1,0 +1,114 @@
+
+*********************************************************************************
+*										*
+*				Opencv install (3.0) 				*
+*										*
+*********************************************************************************
+
+GCC 4.4.x or later. This can be installed with:
+CMake 2.6 or higher;
+Git;
+GTK+2.x or higher, including headers (libgtk2.0-dev);
+pkgconfig;
+Python 2.6 or later and Numpy 1.5 or later with developer packages (python-dev, python-numpy);
+ffmpeg or libav development packages: libavcodec-dev, libavformat-dev, libswscale-dev;
+
+cd WorkingDirectory
+git clone https://github.com/Itseez/opencv.git
+cd opencv
+cmake
+make
+sudo make install
+
+
+*********************************************************************************
+*										*
+*				nodejs install	 				*
+*										*
+*********************************************************************************
+
+sudo apt-get nodejs
+
+*********************************************************************************
+*										*
+*				npm install	 				*
+*										*
+*********************************************************************************
+
+sudo apt-get npm
+
+*********************************************************************************
+*										*
+*		npm gyp module (link between C++ and nodejs)			*
+*										*
+*********************************************************************************
+
+sudo npm install -g node-gyp
+
+*********************************************************************************
+*										*
+*				npm ardrone module				*
+*										*
+*********************************************************************************
+
+npm install git://github.com/felixge/node-ar-drone.git
+or 
+npm install ar-drone
+
+*********************************************************************************
+*										*
+*					Build					*
+*										*
+*********************************************************************************
+
+Create a directory
+Put ProjectARDrone.cpp, binding.gyp, ProjectARDrone.js in the directory
+Open console and go to the directory (cd /......)
+node-gyp configure
+node-gyp build
+
+*********************************************************************************
+*										*
+*					Run					*
+*										*
+*********************************************************************************
+node ProjectARDrone.js 
+
+
+
+
+
+*********************************************************************************
+*										*
+*				Add new Dependencies				*
+*										*
+*********************************************************************************
+
+Go to the binding.gyp
+
+{
+   "targets" : [
+      {
+         "target_name": "ProjectARDrone",
+         "sources": [""ProjectARDrone.cpp"],
+	 "include_dirs": [Add include directory path here],
+         "libraries": [Add library name with path here]
+      }
+   ]
+}
+
+exemple: want add library opencv_core   from opencv
+library is libopencv_core.so, include is in "/usr/local/include/opencv", 
+library is in "/usr/local/lib"
+
+
+{
+   "targets" : [
+      {
+         "target_name": "ProjectARDrone",
+         "sources": [""ProjectARDrone.cpp"],
+	 "include_dirs": ["/usr/local/include/opencv"],
+         "libraries": ["/usr/local/lib/libopencv_core.so"]
+      }
+   ]
+}
