@@ -40,14 +40,16 @@ Handle<Value> test(const Arguments& args)
         valuesN.push_back(atoi(std::string(*valN).c_str()));  
     }
 
-    cv::Mat img = cv::imdecode(values,1);
-    cv::Mat imgN = cv::imdecode(valuesN,1);
-    /*cv::namedWindow( "Display window", cv::WINDOW_AUTOSIZE );// Create a window for display.
-    cv::imshow( "Display window", img );                   // Show our image inside it.
-    cv::waitKey(0);  */
+    cv::initModule_nonfree();
+    //cv::Mat img = cv::imdecode(values,1);
+    //cv::Mat imgN = cv::imdecode(valuesN,1);
+    //cv::namedWindow( "Display window", cv::WINDOW_AUTOSIZE );// Create a window for display.
+    //cv::imshow( "Display window", img );                   // Show our image inside it.
+    //cv::waitKey(0);  
 
     cv::Mat img_reference = cv::imdecode(values,CV_LOAD_IMAGE_GRAYSCALE);
     cv::Mat img_current = cv::imdecode(valuesN,CV_LOAD_IMAGE_GRAYSCALE);
+    
 
     //reference frame computation
     cv::imshow("reference", img_reference);
@@ -113,7 +115,7 @@ Handle<Value> test(const Arguments& args)
    cv::drawMatches(img_reference, kp_ref, img_current, kp_current,
             goodMatches, img_matches, cv::Scalar::all(-1), cv::Scalar::all(-1),
             std::vector<char>(), cv::DrawMatchesFlags::NOT_DRAW_SINGLE_POINTS);
-
+    
     //localization
     std::vector<cv::Point2f> ref;
     std::vector<cv::Point2f> current;
@@ -140,7 +142,6 @@ Handle<Value> test(const Arguments& args)
 
     //get 3x3 identity matrix
     cv::Mat identity = cv::Mat::eye(3, 3, CV_64F);
-
 
 
     //compute task function members
@@ -183,8 +184,11 @@ Handle<Value> test(const Arguments& args)
     std::cout << speed << "SPEED" << std::endl;
     std::cout << angularSpeed << "ANGULAR SPEED" << std::endl;
     cv::imshow("Result", img_matches);
-
-
+    
+    std::string ret = speed.at(0) + "," + speed.at(1) + "," + speed.at(2) + "," + 
+			angularSpeed.at(0) + "," + angularSpeed.at(1) + "," angularSpeed.at(2);
+      Local<Value> r = String::New(ret);
+      return scope.Close(r);
 
 }
 
